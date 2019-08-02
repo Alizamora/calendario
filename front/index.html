@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Calendar</title>
+	<link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -18,6 +19,7 @@
 
 			<!--Events container-->
 			<ul id="eventsContainer"></ul>
+
 			<form action="" name="addEventForm">
 
 				<label for="hourOfTheDay"></label>
@@ -41,15 +43,15 @@
 
 		<div class="calendarContainer">
 			
-			<div class="year">
-				<label for="btnBefore"></label>
-				<input type="button" id="btnBefore">
+			<div class="yearcontainer">
+				<label for="btnYearBefore"></label>
+				<input type="button" id="btnYearBefore">
 				<span id="year"></span>
-				<label for="btnAfter"></label>
-				<input type="button" value="">
+				<label for="btnYearAfter"></label>
+				<input type="button" value="" id="btnYearAfter">
 			</div>
 
-			<ul id="Months">
+			<ul id="months">
 				<li>Jan</li>
 				<li>Feb</li>
 				<li>Mar</li>
@@ -77,6 +79,6 @@
 			<ul id="days"></ul>
 		</div>
 	</div>
+	<script src="./script.js"></script>
 </body>
-
 </html>
