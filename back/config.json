@@ -1,0 +1,6 @@
+{
+    "dbName": "months",
+    "collectionName": "events",
+    "connectionURL": "mongodb://localhost:27017",
+    "port": 1996
+}
