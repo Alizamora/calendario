@@ -1,4 +1,4 @@
-const { end, isPathInURL, getQueries, getBody } = require('../utilities');
+const { end, isPathInURL, parseBoolean, getBody } = require('../utilities');
 
 function getValidHour(hour) {
 	hour = Math.abs(Math.floor(+hour));
@@ -18,11 +18,8 @@ function POST(req, res, collection, ObjectId) {
 			const body = { date, hour, name, favorite, notes };
 			body.hour = getValidHour(body.hour);
 			body.date = isValidDate(body.date) ? date : null;
-			try {
-				body.favorite = !!JSON.parse(body.favorite);
-			} catch {
-				body.favorite = false;
-			}
+			body.favorite = parseBoolean(body.favorite);
+
 			collection.find({ date: body.date, hour: body.hour })
 				.toArray((err, result) => {
 					if (err) return end(res, 'error', err);

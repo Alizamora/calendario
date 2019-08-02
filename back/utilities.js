@@ -85,7 +85,16 @@ function getBody(req, callback) {
 	req.on('end', parseQuery);
 }
 
+function parseBoolean(string){
+	try {
+		return !!JSON.parse(string);
+	} catch {
+		return false;
+	}
+}
+
 module.exports = {
+	parseBoolean,
 	getBody,
 	getQueries,
 	getPath,
