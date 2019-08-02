@@ -53,7 +53,7 @@ function isPathInURL(url, path) {
 	return new RegExp(`^${path}`).test(url);
 }
 
-function getDateRegExp({month, year, day}) {
+function getDateRegExp({ month, year, day }) {
 	const set = string => string ? string : '(.*)';
 	return new RegExp(`${set(month)}-${set(day)}-${set(year)}`, 'i');
 }
@@ -69,19 +69,18 @@ function getQueries(urlString) {
 	return qs.parse(url.parse(urlString).query);
 }
 
-function getBody(req, callback){
+function getBody(req, callback) {
 	const qs = require('querystring');
 	let body = '';
 
 	function parseQuery() {
 		const data = qs.parse(body);
 		callback(data);
-		console.log(body);
 	}
 
-	req.on('data', query =>{
+	req.on('data', query => {
 		body += query;
-		if(body.split('&').length > 96) parseQuery();
+		if (body.split('&').length > 96) parseQuery();
 	});
 	req.on('end', parseQuery);
 }
