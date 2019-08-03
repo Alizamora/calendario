@@ -1,66 +1,93 @@
 //Calendar styles
-[selected]{
-	font-weight: bold;
-	color: #0B3C49;
+[selected] {
+  font-weight: bold;
+  color: #0b3c49;
+  cursor: pointer;
 }
 
-.calendarContainer{
+[isselected] {
+  color: white;
+  background-color: #0b3c49;
+  width: 20px;
+  text-align: center;
+  display: block;
+  border-radius: 100%;
+  box-shadow: 0 0 0 10px #0b3c49;
+}
+
+[hasevent] {
+  position: relative;
+  &::after {
+    content: "";
+    background: #c14953;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+    display: block;
+    border-radius: 50%;
+    top: -11px;
+    left: 20px;
+    box-shadow: 7px -11px 20px 11px white;
+    transition: 0.5s;
+  }
+}
+
+.calendarContainer {
   display: grid;
   grid-template-rows: 10% 5% 10% 1fr;
   padding: 20px 50px;
 }
 
-.yearcontainer{
-	justify-self: right;
-	align-self: center;
+.yearcontainer {
+  justify-self: right;
+  align-self: center;
 }
 
-.btnYearBefore{
-	background-image: url('../img/arrow-preview.png');
-	background-size: contain;
-	background-color: transparent;
-	background-repeat: no-repeat;
+.btnYearBefore {
+  background-image: url("../img/arrow-preview.png");
+  background-size: contain;
+  background-color: transparent;
+  background-repeat: no-repeat;
   border: 0px;
 }
 
-.year{
-	font-size: 35px;
+.year {
+  font-size: 35px;
   padding: 0 10px;
   color: #0b3c49;
   font-weight: bold;
 }
 
-.btnYearAfter{
-	background-image: url('../img/arrow-next.png');
-	background-size: contain;
-	background-color: transparent;
-	background-repeat: no-repeat;
+.btnYearAfter {
+  background-image: url("../img/arrow-next.png");
+  background-size: contain;
+  background-color: transparent;
+  background-repeat: no-repeat;
   border: 0px;
 }
 
-.months{
+.months {
   display: grid;
-	grid-template-columns: repeat(12, 1fr);
-	align-self: center;
-	text-align: center;
-	font-size: 14px;
-	color: #b3b3b3;
+  grid-template-columns: repeat(12, 1fr);
+  align-self: center;
+  text-align: center;
+  font-size: 14px;
+  color: #b3b3b3;
 }
 
-.week{
+.week {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   align-self: center;
-	text-align: center;
-	border-top: solid 2px #0B3C49;
+  text-align: center;
+  border-top: solid 2px #0b3c49;
   margin: 0;
-	padding-top: 3%;
-	text-transform: uppercase;
-	color: gray;
+  padding-top: 3%;
+  text-transform: uppercase;
+  color: gray;
 }
 
-.days{
+.days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
 }
-

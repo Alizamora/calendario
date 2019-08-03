@@ -6,7 +6,7 @@ body {
 h1 {
   text-align: center;
   letter-spacing: 15px;
-  font-size: 60px;
+  font-size: 5vw;
   margin: 30px;
   text-transform: uppercase;
   color: #0b3c49;
@@ -19,8 +19,9 @@ ul {
 }
 
 li {
+  display: flex;
+  justify-self: center;
   align-self: center;
-  text-align: center;
 }
 
 .container {

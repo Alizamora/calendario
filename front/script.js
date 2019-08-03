@@ -19,6 +19,8 @@ let currentYear = currentDate.getFullYear();
 let currentMonth = currentDate.getMonth() + 1;
 let currentDay = currentDate.getDate();
 let currentWeekDay = currentDate.getDay();
+let currentEvents;
+let selectedEvents;
 
 function setYear(year, element) {
 	element.innerText = year;
@@ -64,7 +66,7 @@ function displayDays(daysObject, container) {
 	container.innerHTML = '';
 	for (let i = 0, j = 0; i < 42; i++) {
 		const li = document.createElement('LI');
-		if (i >= firstDay && j + 1 <= allDays.length){
+		if (i >= firstDay && j + 1 <= allDays.length) {
 			li.innerText = j + 1;
 			li.title = allDays[j].format;
 			li.setAttribute('weekDay', allDays[j].weekDay);
@@ -80,6 +82,7 @@ function setMonth(target) {
 	currentMonth = allMonths.indexOf(li.title) + 1;
 	displayDays(setDays(currentYear, currentMonth), days);
 	changeCalendarDay(selectByDate(`${currentMonth}-${currentDay}-${currentYear}`));
+	fetchMonth();
 }
 
 function changeCalendarDay(target) {
@@ -106,14 +109,64 @@ function selectByDate(date) {
 	return [...days.children].filter(mDay => mDay.title === date)[0];
 }
 
-function fechMonth(month, year){
-	fetch('https://localhost:1996');
-	
+function fetchMonth() {
+	fetch(`http://localhost:1996/api/v1/months/${currentYear}/${currentMonth}`)
+		.then(data => data.json())
+		.then(json => {
+			currentEvents = json.data;
+			setEvents();
+			selectDay(`${currentMonth}-${currentDay}-${currentYear}`);
+		});
+}
+
+function setEvents() {
+	const dates = currentEvents.map(event => event.date);
+	[...days.children].forEach(dayChild => {
+		const isDateCoincidence = dates.indexOf(dayChild.title) > -1;
+		if (isDateCoincidence) {
+			dayChild.setAttribute('hasEvent', '');
+		}
+	});
+}
+
+function selectDay(date) {
+	[...days.children].forEach(dayChild => {
+		dayChild.removeAttribute('isSelected');
+		if (dayChild.title === date) {
+			dayChild.setAttribute('isSelected', '');
+			selectedEvents = currentEvents.filter(event => {
+				return event.date === date;
+			});
+		}
+	});
+	displayEvents();
+}
+
+function displayEvents() {
+	eventsContainer.innerHTML = '';
+	selectedEvents.forEach(event => {
+		const li = document.createElement('LI');
+		const span = document.createElement('SPAN');
+
+		let hour = event.hour;
+		let time = 'am';
+
+		if(event.hour > 12) {
+			hour -= 12;
+			time = 'pm';
+		}
+
+		li.innerHTML = event.name;
+		span.innerHTML = `${('' + hour).length === 1 ? '0' + hour : hour}:00${time}`;
+
+		li.prepend(span);
+		eventsContainer.appendChild(li);
+	});
 }
 
 displayDays(setDays(currentYear, currentMonth), days);
 setYear(currentYear, year);
-setMonth({title: allMonths[currentMonth - 1]});
+setMonth({ title: allMonths[currentMonth - 1] });
 changeCalendarDay(selectByDate(`${currentMonth}-${currentDay}-${currentYear}`));
 
 btnYearBefore.addEventListener('click', change(-1).year);
@@ -128,5 +181,6 @@ months.addEventListener('click', (event) => {
 days.addEventListener('click', (event) => {
 	if (event.target.tagName === 'LI') {
 		changeCalendarDay(event.target);
+		selectDay(event.target.title);
 	}
 });

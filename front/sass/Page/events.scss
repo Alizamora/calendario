@@ -1,61 +1,61 @@
 //Events container styles
 
-.resume{
-    background-color: #0B3C49;
-    color: #E5EAFA;
-    position: relative;
-    padding: 20px;
+.resume {
+  background-color: #0b3c49;
+  color: #e5eafa;
+  position: relative;
+  padding: 20px;
 }
 
-.month{
-
+.month {
 }
 
-.numberDay{
-    display: block;
-    font-size: 80px;
-    font-weight: bold;
-    text-align: center;
+.numberDay {
+  display: block;
+  font-size: 80px;
+  font-weight: bold;
+  text-align: center;
 }
 
-.day{
-    display: block;
-    text-transform: uppercase;
-    text-align: center;
+.day {
+  display: block;
+  text-transform: uppercase;
+  text-align: center;
 }
 
-.eventsContainer{
-    position: absolute;
-    top: 55%;
+.eventsContainer {
+  position: absolute;
+  top: 55%;
 }
 
-.eventForm{
-    position: absolute;
-    top: 85%;
+.eventForm {
+  position: absolute;
+  top: 85%;
 }
 
-.hourOfTheDay{
-    width: 30px;
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #E5EAFA;
+.hourOfTheDay {
+  width: 30px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #e5eafa;
 }
 
-.eventText{
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid white;
-    ::placeholder{
-        color: #E5EAFA;
-    }
+.eventText {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  &::placeholder {
+    color: #e5eafa;
+  }
 }
 
-p{
-    position: absolute;
-    top: 50%;
+p {
+  font-weight: bold;
+  position: absolute;
+  top: 45%;
 }
 
-select{
-    background-color: transparent;
-    border: none;
+select {
+  background-color: transparent;
+  border: none;
 }

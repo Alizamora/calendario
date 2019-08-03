@@ -6,7 +6,7 @@ body {
 h1 {
   text-align: center;
   letter-spacing: 15px;
-  font-size: 60px;
+  font-size: 5vw;
   margin: 30px;
   text-transform: uppercase;
   color: #0b3c49;
@@ -19,8 +19,9 @@ ul {
 }
 
 li {
+  display: flex;
+  justify-self: center;
   align-self: center;
-  text-align: center;
 }
 
 .container {
@@ -46,7 +47,35 @@ li {
 
 [selected] {
   font-weight: bold;
-  color: #0B3C49;
+  color: #0b3c49;
+  cursor: pointer;
+}
+
+[isselected] {
+  color: white;
+  background-color: #0b3c49;
+  width: 20px;
+  text-align: center;
+  display: block;
+  border-radius: 100%;
+  box-shadow: 0 0 0 10px #0b3c49;
+}
+
+[hasevent] {
+  position: relative;
+}
+[hasevent]::after {
+  content: "";
+  background: #c14953;
+  height: 10px;
+  position: absolute;
+  width: 10px;
+  display: block;
+  border-radius: 50%;
+  top: -11px;
+  left: 20px;
+  box-shadow: 7px -11px 20px 11px white;
+  transition: 0.5s;
 }
 
 .calendarContainer {
@@ -97,7 +126,7 @@ li {
   grid-template-columns: repeat(7, 1fr);
   align-self: center;
   text-align: center;
-  border-top: solid 2px #0B3C49;
+  border-top: solid 2px #0b3c49;
   margin: 0;
   padding-top: 3%;
   text-transform: uppercase;
@@ -110,8 +139,8 @@ li {
 }
 
 .resume {
-  background-color: #0B3C49;
-  color: #E5EAFA;
+  background-color: #0b3c49;
+  color: #e5eafa;
   position: relative;
   padding: 20px;
 }
@@ -143,7 +172,7 @@ li {
   width: 30px;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #E5EAFA;
+  border-bottom: 1px solid #e5eafa;
 }
 
 .eventText {
@@ -151,13 +180,14 @@ li {
   border: none;
   border-bottom: 1px solid white;
 }
-.eventText ::placeholder {
-  color: #E5EAFA;
+.eventText::placeholder {
+  color: #e5eafa;
 }
 
 p {
+  font-weight: bold;
   position: absolute;
-  top: 50%;
+  top: 45%;
 }
 
 select {

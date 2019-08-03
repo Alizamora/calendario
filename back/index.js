@@ -7,6 +7,7 @@ const methods = {
 };
 
 connect((req, res, collection, ObjectId) => {
+	res.setHeader('Access-Control-Allow-Origin', '*');
 	if (methods[req.method]) {
 		methods[req.method](req, res, collection, ObjectId);
 	} else if (req.method === 'OPTIONS') {
