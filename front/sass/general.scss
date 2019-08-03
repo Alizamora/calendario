@@ -1,1 +1,37 @@
 //General styles
+
+body{
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+  text-align: center;
+	letter-spacing: 15px;
+	font-size: 60px;
+	margin: 30px;
+	text-transform: uppercase;
+    color: #0b3c49;
+}
+
+ul{
+	padding: 0;
+	list-style: none;
+	margin: 0;
+}
+
+li{
+	align-self: center;
+	text-align: center;
+}
+
+.container{
+	margin: 0 auto;
+	width: 90vw;
+	height: 80vh;
+	box-shadow: 5px 5px 18px -5px rgba(0,0,0,0.75);
+	border-radius: 30px;
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 35% 1fr;
+}

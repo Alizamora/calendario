@@ -12,30 +12,30 @@
 	<h1>Calendar</h1>
 	<div class="container">
 		<div class="resume">
-			<h2 id="month"></h2>
-			<span id="numberDay"></span>
-			<span id="day"></span>
+			<h2 id="month" class="month" ></h2>
+			<span id="numberDay" class="numberDay" ></span>
+			<span id="day" class="day"></span>
 			<p>Current events:</p>
 
 			<!--Events container-->
-			<ul id="eventsContainer"></ul>
+			<ul id="eventsContainer" class="eventsContainer"></ul>
 
-			<form action="" name="addEventForm">
+			<form action="" name="addEventForm" class="eventForm">
 
 				<label for="hourOfTheDay"></label>
-				<input type="number" name="hourOfTheDay" id="hourOfTheDay">
+				<input type="number" name="hourOfTheDay" id="hourOfTheDay" class="hourOfTheDay" placeholder="8">
 
 				<label for="timeOfTheDay" name="timeOfTheDay"></label>
 				<select name="time" id="timeOfTheDay">
-					<option value="am">Am</option>
-					<option value="pm">Pm</option>
+					<option value="am">am</option>
+					<option value="pm">pm</option>
 				</select>
 
 				<label for="eventText"></label>
-				<input type="text" id="eventText">
+				<input type="text" id="eventText" class="eventText" placeholder="Create an Event">
 
 				<label for="btnEvent" name="btnEvent"></label>
-				<input type="button" id="btnEvent">
+				<input type="button" id="btnEvent" class="btnEvent">
 
 			</form>
 		</div>
@@ -45,38 +45,38 @@
 			
 			<div class="yearcontainer">
 				<label for="btnYearBefore"></label>
-				<input type="button" id="btnYearBefore">
-				<span id="year"></span>
-				<label for="btnYearAfter"></label>
-				<input type="button" value="" id="btnYearAfter">
+				<input type="button" id="btnYearBefore" class="btnYearBefore">
+				<span id="year" class="year"></span>
+				<label for="btnYearAfter" ></label>
+				<input type="button" value="" id="btnYearAfter" class="btnYearAfter">
 			</div>
 
-			<ul id="months">
-				<li>Jan</li>
-				<li>Feb</li>
-				<li>Mar</li>
-				<li>Apr</li>
-				<li>May</li>
-				<li>Jun</li>
-				<li>Jul</li>
-				<li>Aug</li>
-				<li>Sep</li>
-				<li>Oct</li>
-				<li>Nov</li>
-				<li>Dec</li>
+			<ul id="months" class="months">
+				<li title="January">Jan</li>
+				<li title="February">Feb</li>
+				<li title="March">Mar</li>
+				<li title="April">Apr</li>
+				<li title="May">May</li>
+				<li title="June">Jun</li>
+				<li title="July">Jul</li>
+				<li title="August">Aug</li>
+				<li title="September">Sep</li>
+				<li title="October">Oct</li>
+				<li title="November">Nov</li>
+				<li title="December">Dec</li>
 			</ul>
 
-			<ul id="week">
-				<li>Sun</li>
-				<li>Mon</li>
-				<li>Tue</li>
-				<li>Wed</li>
-				<li>Thu</li>
-				<li>Fri</li>
-				<li>Sat</li>
+			<ul id="week" class="week">
+				<li title="Sunday">Sun</li>
+				<li title="Monday">Mon</li>
+				<li title="Tuesday">Tue</li>
+				<li title="Wednesday">Wed</li>
+				<li title="Thurday">Thu</li>
+				<li title="Friday">Fri</li>
+				<li title="Saturday">Sat</li>
 			</ul>
 
-			<ul id="days"></ul>
+			<ul id="days" class="days"></ul>
 		</div>
 	</div>
 	<script src="./script.js"></script>

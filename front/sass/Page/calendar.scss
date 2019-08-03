@@ -1,1 +1,66 @@
 //Calendar styles
+[selected]{
+	font-weight: bold;
+	color: #0B3C49;
+}
+
+.calendarContainer{
+  display: grid;
+  grid-template-rows: 10% 5% 10% 1fr;
+  padding: 20px 50px;
+}
+
+.yearcontainer{
+	justify-self: right;
+	align-self: center;
+}
+
+.btnYearBefore{
+	background-image: url('../img/arrow-preview.png');
+	background-size: contain;
+	background-color: transparent;
+	background-repeat: no-repeat;
+  border: 0px;
+}
+
+.year{
+	font-size: 35px;
+  padding: 0 10px;
+  color: #0b3c49;
+  font-weight: bold;
+}
+
+.btnYearAfter{
+	background-image: url('../img/arrow-next.png');
+	background-size: contain;
+	background-color: transparent;
+	background-repeat: no-repeat;
+  border: 0px;
+}
+
+.months{
+  display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	align-self: center;
+	text-align: center;
+	font-size: 14px;
+	color: #b3b3b3;
+}
+
+.week{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-self: center;
+	text-align: center;
+	border-top: solid 2px #0B3C49;
+  margin: 0;
+	padding-top: 3%;
+	text-transform: uppercase;
+	color: gray;
+}
+
+.days{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+

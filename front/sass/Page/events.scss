@@ -1,1 +1,61 @@
 //Events container styles
+
+.resume{
+    background-color: #0B3C49;
+    color: #E5EAFA;
+    position: relative;
+    padding: 20px;
+}
+
+.month{
+
+}
+
+.numberDay{
+    display: block;
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.day{
+    display: block;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.eventsContainer{
+    position: absolute;
+    top: 55%;
+}
+
+.eventForm{
+    position: absolute;
+    top: 85%;
+}
+
+.hourOfTheDay{
+    width: 30px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #E5EAFA;
+}
+
+.eventText{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    ::placeholder{
+        color: #E5EAFA;
+    }
+}
+
+p{
+    position: absolute;
+    top: 50%;
+}
+
+select{
+    background-color: transparent;
+    border: none;
+}

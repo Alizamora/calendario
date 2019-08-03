@@ -1,0 +1,168 @@
+body {
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  letter-spacing: 15px;
+  font-size: 60px;
+  margin: 30px;
+  text-transform: uppercase;
+  color: #0b3c49;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+li {
+  align-self: center;
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90vw;
+  height: 80vh;
+  box-shadow: 5px 5px 18px -5px rgba(0, 0, 0, 0.75);
+  border-radius: 30px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 35% 1fr;
+}
+
+.btnEvent {
+  background-image: url("../img/plus.png");
+  background-size: contain;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  width: 25px;
+  height: 25px;
+}
+
+[selected] {
+  font-weight: bold;
+  color: #0B3C49;
+}
+
+.calendarContainer {
+  display: grid;
+  grid-template-rows: 10% 5% 10% 1fr;
+  padding: 20px 50px;
+}
+
+.yearcontainer {
+  justify-self: right;
+  align-self: center;
+}
+
+.btnYearBefore {
+  background-image: url("../img/arrow-preview.png");
+  background-size: contain;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: 0px;
+}
+
+.year {
+  font-size: 35px;
+  padding: 0 10px;
+  color: #0b3c49;
+  font-weight: bold;
+}
+
+.btnYearAfter {
+  background-image: url("../img/arrow-next.png");
+  background-size: contain;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: 0px;
+}
+
+.months {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-self: center;
+  text-align: center;
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+.week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-self: center;
+  text-align: center;
+  border-top: solid 2px #0B3C49;
+  margin: 0;
+  padding-top: 3%;
+  text-transform: uppercase;
+  color: gray;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.resume {
+  background-color: #0B3C49;
+  color: #E5EAFA;
+  position: relative;
+  padding: 20px;
+}
+
+.numberDay {
+  display: block;
+  font-size: 80px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.day {
+  display: block;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.eventsContainer {
+  position: absolute;
+  top: 55%;
+}
+
+.eventForm {
+  position: absolute;
+  top: 85%;
+}
+
+.hourOfTheDay {
+  width: 30px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #E5EAFA;
+}
+
+.eventText {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+}
+.eventText ::placeholder {
+  color: #E5EAFA;
+}
+
+p {
+  position: absolute;
+  top: 50%;
+}
+
+select {
+  background-color: transparent;
+  border: none;
+}
+
+/*# sourceMappingURL=style.css.map */
